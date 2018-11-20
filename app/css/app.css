@@ -1,0 +1,156 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	font-family: Arial, sans-serif;
+}
+
+video{
+	width: 800px;
+	display: block;
+	margin: 15px auto;
+}
+video.disabled{
+	opacity: 0.3;
+	transition: opacity .3s linear;
+}
+
+ul{
+	list-style: none;
+}
+li{
+	list-style: none;
+}
+
+
+.wrap{
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.controls{
+	background: black;
+	padding: 10px;
+}
+
+.question-wrap{
+	width: 100%;
+	position: absolute;
+	top: -1000px;
+	left: 0;
+	z-index: 9;
+	transition: top .3s linear;
+}
+.question-wrap.active{
+	top: 150px;
+}
+
+.question-wrap .question{
+	width: 400px;
+	background: #fff;
+	padding: 35px 25px;
+	margin: 0 auto;
+	border: solid 3px #333;
+}
+.question-wrap form{
+	display: none;
+	min-height: 60px;
+}
+.question-wrap form.current{
+	display: block;
+}
+.question-wrap form.error{
+	background: red;
+}
+.question-wrap form.success{
+	background: green;
+}
+
+.options-question li{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 15px;
+}
+
+.message-error{
+	color: red;
+}
+
+.ul-hearts li{
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 3px;
+	width: 20px;
+	height: 20px;
+	background: url(../img/heart.png) no-repeat;
+	background-size: contain;
+}
+
+
+.coin-box .coin{
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	background: url(../img/coin.png) no-repeat;
+	background-size: contain;
+}
+
+.user-bar{
+	padding: 25px 10px 10px 10px;
+	background: #f4f4f4;
+	font-size: 14px;
+}
+.user-bar > div{
+	width: 33.33333%;
+	float: left;
+	min-height: 30px;
+}
+.user-bar:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.heart-box{}
+.avatar-box{
+	text-align: center;
+}
+.avatar-box img{
+	max-width: 25px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.coin-box{
+	text-align: right;
+}
+
+
+.progress-bar{
+	height: 5px;
+	width: 80%;
+	display: inline-block;
+	background: #ccc;
+	position: relative;
+}
+.progress-bar > div{
+	height: 5px;
+	width: 0%;
+	background: #307bbb;
+	left: 0;
+	top: 0;
+	position: absolute;
+	z-index: 2;
+}
+
+
+.c100{
+	font-size: 60px;
+	background-color: #307bbb;
+	margin-right: 25px;
+}
+/*.c100 .bar{
+	transition: all .3s linear;
+}*/

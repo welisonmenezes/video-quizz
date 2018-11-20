@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Vídeo Quizz</title>
+
+	<link rel="stylesheet" href="css/circle.css">
+	<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+	<div class="wrap">
+
+		<div class="user-bar">
+			<div class="heart-box">
+				<ul id="ulHearts" class="ul-hearts"></ul>
+			</div>
+			<div class="avatar-box">
+				<img id="userAvatar" alt="avatar">
+				<span id="userName"></span>
+			</div>
+			<div class="coin-box">
+				<span class="coin"></span>
+				<span id="userCoins" class="coin-label"></span>
+			</div>
+		</div>
+
+		<video id="videoMain">
+			<source src="source/integrativa_uniplac.mp4" type="video/mp4">
+			<p>Seu navegador não suporta vídeos HTML5.</p>
+		</video>
+
+		<div class="controls">
+			<button id="btnPlay">Play</button>
+			<div class="progress-bar"><div id="progressBar"></div></div>
+		</div>
+
+		<div id="questionWrap" class="question-wrap">
+			<div class="question">
+
+				<div id="timerScreen" class="c100 p100">
+					<span>5</span>
+					<div class="slice">
+						<div class="bar"></div>
+						<div class="fill"></div>
+					</div>
+				</div>
+				
+				<form>
+					<h3>Pergunta um</h3>
+					<ul class="options-question">
+						<li>
+							<label>
+								<input name="answer_1" type="radio" value="1"> 10
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="answer_1" type="radio" value="2"> 19
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="answer_1" type="radio" value="3"> 21
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="answer_1" type="radio" value="4"> 29
+							</label>
+						</li>
+					</ul>
+					<p class="message-error"></p>
+					<button class="btnAnswer">Responder</button>
+				</form>
+
+				<form>
+					<h3>Pergunta dois</h3>
+					<ul class="options-question">
+						<li>
+							<label>
+								<input name="answer_2" type="radio" value="1"> 10
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="answer_2" type="radio" value="2"> 19
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="answer_2" type="radio" value="3"> 21
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="answer_2" type="radio" value="4"> 29
+							</label>
+						</li>
+					</ul>
+					<p class="message-error"></p>
+					<button class="btnAnswer">Responder</button>
+				</form>
+
+				<form>
+					<h3>Pergunta três</h3>
+					<ul class="options-question">
+						<li>
+							<label>
+								<input name="answer_2" type="radio" value="1"> 10
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="answer_2" type="radio" value="2"> 19
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="answer_2" type="radio" value="3"> 21
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="answer_2" type="radio" value="4"> 29
+							</label>
+						</li>
+					</ul>
+					<p class="message-error"></p>
+					<button class="btnAnswer">Responder</button>
+				</form>
+
+			</div>
+		</div>
+
+
+		<div class="audio-wrap">
+			<audio id="audioEffects" src="" type="audio/mpeg"></audio>
+		</div>
+		
+	</div>
+
+	<script src="js/app.js"></script>
+</body>
+</html>
