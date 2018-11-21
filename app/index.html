@@ -45,11 +45,47 @@
 								<img src="img/avatar-4.png" alt="avatar">
 							</label>
 						</li>
+						<li>
+							<label>
+								<input name="avatar" type="radio" value="img/avatar-5.png">
+								<img src="img/avatar-5.png" alt="avatar">
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="avatar" type="radio" value="img/avatar-6.png">
+								<img src="img/avatar-6.png" alt="avatar">
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="avatar" type="radio" value="img/avatar-7.png">
+								<img src="img/avatar-7.png" alt="avatar">
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="avatar" type="radio" value="img/avatar-8.png">
+								<img src="img/avatar-8.png" alt="avatar">
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="avatar" type="radio" value="img/avatar-9.png">
+								<img src="img/avatar-9.png" alt="avatar">
+							</label>
+						</li>
+						<li>
+							<label>
+								<input name="avatar" type="radio" value="img/avatar-10.png">
+								<img src="img/avatar-10.png" alt="avatar">
+							</label>
+						</li>
 					</ul>
 					<p id="getAvatarError" class="message-error"></p>
 				</div>
 				<div>
-					<button id="btnStartGame">Começar o jogo!</button>
+					<button id="btnStartGame" class="btn-primary">Começar o jogo!</button>
 				</div>
 			</div>
 		</div>
@@ -70,13 +106,13 @@
 				</div>
 			</div>
 
-			<video controls id="videoMain">
+			<video xcontrols id="videoMain" poster="img/cover.jpg">
 				<source src="source/treinamento.mp4" type="video/mp4">
 				<p>Seu navegador não suporta vídeos HTML5.</p>
 			</video>
 
 			<div class="controls">
-				<button id="btnPlay">Play</button>
+				<button id="btnPlay"></button>
 				<div class="progress-bar"><div id="progressBar"></div></div>
 			</div>
 
@@ -116,7 +152,7 @@
 							</li>
 						</ul>
 						<p class="message-error"></p>
-						<button class="btnAnswer">Responder</button>
+						<button class="btnAnswer btn-dark">Responder</button>
 					</form>
 
 					<form>
@@ -144,7 +180,7 @@
 							</li>
 						</ul>
 						<p class="message-error"></p>
-						<button class="btnAnswer">Responder</button>
+						<button class="btnAnswer btn-dark">Responder</button>
 					</form>
 
 					<form>
@@ -162,7 +198,7 @@
 							</li>
 						</ul>
 						<p class="message-error"></p>
-						<button class="btnAnswer">Responder</button>
+						<button class="btnAnswer btn-dark">Responder</button>
 					</form>
 
 				</div>
@@ -176,10 +212,10 @@
 				<p>Gostaria de tentar novamente?</p>
 				<ul class="ul-actions">
 					<li>
-						<button id="playAgain">Sim</button>
+						<button id="playAgain" class="btn-success">Sim</button>
 					</li>
 					<li>
-						<button id="finishGame">Não</button>
+						<button id="finishGame" class="btn-danger">Não</button>
 					</li>
 				</ul>
 			</div>

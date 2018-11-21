@@ -8,16 +8,27 @@
 
 
 	playAgain.addEventListener("click", function(){
-		stepThree.classList.remove("active");
-		stepTwo.classList.add("active");
+		audioEffects.src = "source/lets-go.mp3";
+		audioEffects.oncanplay = function(){
+			audioEffects.play();
+			
+			stepThree.classList.remove("active");
+			stepTwo.classList.add("active");
+		};
 	});
 
 	finishGame.addEventListener("click", function(){
-		stepThree.classList.remove("active");
-		stepFour.classList.add("active");
 
-		makeReport();
-		makeRanking();
+		audioEffects.src = "source/ending.mp3";
+		audioEffects.oncanplay = function(){
+			audioEffects.play();
+
+			stepThree.classList.remove("active");
+			stepFour.classList.add("active");
+
+			makeReport();
+			makeRanking();
+		};
 	});
 
 }());

@@ -85,11 +85,16 @@
 		var stepTwo = document.getElementById("stepTwo"),
 		stepFour = document.getElementById("stepFour");
 
-		stepTwo.classList.remove("active");
-		stepFour.classList.add("active");
+		audioEffects.src = "source/ending.mp3";
+		audioEffects.oncanplay = function(){
+			audioEffects.play();
 
-		makeReport();
-		makeRanking();
+			stepTwo.classList.remove("active");
+			stepFour.classList.add("active");
+
+			makeReport();
+			makeRanking();
+		};
 	});
 
 
