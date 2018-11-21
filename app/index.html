@@ -5,18 +5,12 @@
 	<title>Vídeo Quizz</title>
 
 	<link rel="stylesheet" href="css/circle.css">
-	<!-- <link rel="stylesheet" href="labyrinth/css/style.css"> -->
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 	<div class="wrap">
 
-		<!-- <div class="step">
-			<div id="c"></div>
-			<p id="fps"></p>
-		</div> -->
-
-		<div class="step active" id="stepOne">
+		<div class="step xactive" id="stepOne">
 			<div class="config-painel">
 				<h3>Bem vindo ao Vídeo Quizz</h3>
 				<div class="name-box">
@@ -201,8 +195,29 @@
 			</div>
 		</div>
 
-		<div class="step" id="stepFour">
-			ranking aqui.
+		<div class="step active" id="stepFour">
+			<div class="ranking-box">
+				<h3>Obrigado por participar.</h3>
+				<h4>Abaixo segue seu relatório</h4>
+				<table>
+					<thead>
+						<tr>
+							<th>Avatar</th>
+							<th>Nome</th>
+							<th>Moedas</th>
+							<th>Vidas</th>
+							<th>Erros</th>
+							<th>Acertos</th>
+							<th>Timeout</th>
+							<th>Ranking</th>
+						</tr>
+					</thead>
+					<tbody id="userTBody"></tbody>
+				</table>
+
+				<h3>Rainking geral</h3>
+				<ul class="ul-ranking" id="ulRanking"></ul>
+			</div>
 		</div>
 
 
@@ -213,9 +228,9 @@
 	</div>
 
 	<script src="js/data.js"></script>
-	<!-- <script src="labyrinth/js/game.js"></script> -->
 	<script src="js/stepOne.js"></script>
 	<script src="js/stepTwo.js"></script>
 	<script src="js/stepThree.js"></script>
+	<script src="js/stepFour.js"></script>
 </body>
 </html>

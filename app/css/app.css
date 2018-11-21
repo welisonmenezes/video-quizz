@@ -5,7 +5,8 @@
 
 body{
 	font-family: Arial, sans-serif;
-	background: url(../img/bg.jpg) no-repeat;
+	background: url(../img/bg.jpg) repeat-x;
+	background-attachment: fixed;
 	height: 100%;
 }
 
@@ -29,6 +30,22 @@ ul{
 }
 li{
 	list-style: none;
+}
+
+table{
+	width: 100%;
+	font-size: 14px;
+	border-collapse: collapse;
+	color: #444;
+}
+th{
+	background: #eee;
+}
+td, th{
+	padding: 4px 8px;
+	text-align: left;
+	border: solid 1px #333;
+	background: #fff;
 }
 
 
@@ -210,4 +227,58 @@ li{
 .ul-actions li{
 	display: inline-block;
 	vertical-align: middle;
+}
+
+
+.ranking-box{
+	text-align: center;
+	padding-top: 30px;
+}
+.ranking-box h4{
+	margin-bottom: 20px;
+	margin-top: 10px;
+	font-size: 14px;
+}
+.ranking-box table{
+	margin-bottom: 50px;
+}
+
+
+.ul-ranking{
+	max-width: 500px;
+	margin: 0 auto;
+	margin-bottom: 100px;
+	margin-top: 25px;
+	background: rgba(255, 255, 255, 0.7);
+}
+.ul-ranking li{
+	text-align: left;
+	padding: 15px 0;
+	border-bottom: 1px solid #aaa;
+}
+.ul-ranking li > span,
+.ul-ranking li > img{
+	display: inline-block;
+	vertical-align: middle;
+}
+.ul-ranking li > span{
+	padding: 5px 15px;
+}
+.ul-ranking span.position{
+	background: #307bbb;
+	color: #fff;
+	border-radius: 50%;
+	width: 15px;
+	height: 15px;
+	padding: 10px 10px 10px 10px !important;
+	text-align: center;
+	margin-right: 35px;
+	margin-left: 10px;
+}
+.ul-ranking span.coins{
+	float: right;
+	padding-top: 20px;
+}
+.ul-ranking img{
+	max-width: 60px;
 }

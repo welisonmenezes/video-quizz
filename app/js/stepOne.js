@@ -23,6 +23,8 @@
 			objPlayer.avatar = selected.value;
 			setAvatarNamePlayer();
 
+			objPlayers.push(objPlayer);
+
 		}
 	});
 

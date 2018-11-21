@@ -26,6 +26,8 @@
 		}else{
 			videoMain.pause();
 		}
+
+		//console.log(objPlayer)
 	});
 
 
@@ -59,7 +61,8 @@
 
 					currentForm.querySelector('.btnAnswer').classList.add("hide");
 					clearInterval(timerBonus);
-					wrongAnswer();
+					wrongAnswer(true);
+					objPlayer.timeouts++;
 					
 				}, 5001);
 
@@ -171,7 +174,7 @@
 	}
 
 
-	function wrongAnswer(){
+	function wrongAnswer(isTimeout){
 		currentForm.classList.add("error");
 		audioEffects.src = "source/fail.mp3";
 		audioEffects.oncanplay = function(){
@@ -179,6 +182,11 @@
 
 
 			objPlayer.lifes--;
+
+			if(!isTimeout){
+				objPlayer.errors++;
+			}
+			
 			setHeartsToPlayer();
 
 
@@ -204,6 +212,7 @@
 			audioEffects.play();
 
 			objPlayer.coins += 100 * bonusTime;
+			objPlayer.hits++;
 			setCoinsToPlayer();
 
 			setTimeout(function(){
@@ -297,8 +306,11 @@
 
 		currentForm.querySelector('.btnAnswer').classList.remove("hide");
 
-		objPlayer.lifes = 1;
+		objPlayer.lifes = 3;
 		objPlayer.coins = 0;
+		objPlayer.hits = 0;
+		objPlayer.errors = 0;
+		objPlayer.timeouts = 0;
 		setHeartsToPlayer();
 		setCoinsToPlayer();
 	}
