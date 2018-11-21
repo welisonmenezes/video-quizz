@@ -5,131 +5,204 @@
 	<title>Vídeo Quizz</title>
 
 	<link rel="stylesheet" href="css/circle.css">
+	<!-- <link rel="stylesheet" href="labyrinth/css/style.css"> -->
 	<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
 	<div class="wrap">
 
-		<div class="user-bar">
-			<div class="heart-box">
-				<ul id="ulHearts" class="ul-hearts"></ul>
-			</div>
-			<div class="avatar-box">
-				<img id="userAvatar" alt="avatar">
-				<span id="userName"></span>
-			</div>
-			<div class="coin-box">
-				<span class="coin"></span>
-				<span id="userCoins" class="coin-label"></span>
-			</div>
-		</div>
+		<!-- <div class="step">
+			<div id="c"></div>
+			<p id="fps"></p>
+		</div> -->
 
-		<video id="videoMain">
-			<source src="source/integrativa_uniplac.mp4" type="video/mp4">
-			<p>Seu navegador não suporta vídeos HTML5.</p>
-		</video>
-
-		<div class="controls">
-			<button id="btnPlay">Play</button>
-			<div class="progress-bar"><div id="progressBar"></div></div>
-		</div>
-
-		<div id="questionWrap" class="question-wrap">
-			<div class="question">
-
-				<div id="timerScreen" class="c100 p100">
-					<span>5</span>
-					<div class="slice">
-						<div class="bar"></div>
-						<div class="fill"></div>
-					</div>
+		<div class="step active" id="stepOne">
+			<div class="config-painel">
+				<h3>Bem vindo ao Vídeo Quizz</h3>
+				<div class="name-box">
+					<p>Informe seu nome:</p>
+					<input type="text" id="getName">
+					<p id="getNameError" class="message-error"></p>
 				</div>
-				
-				<form>
-					<h3>Pergunta um</h3>
-					<ul class="options-question">
+				<div class="avatar-box">
+					<p>Selecione seu avatar</p>
+					<ul class="ul-avatar" id="ulAvatars">
 						<li>
 							<label>
-								<input name="answer_1" type="radio" value="1"> 10
+								<input name="avatar" type="radio" value="img/avatar-1.png">
+								<img src="img/avatar-1.png" alt="avatar">
 							</label>
 						</li>
 						<li>
 							<label>
-								<input name="answer_1" type="radio" value="2"> 19
+								<input name="avatar" type="radio" value="img/avatar-2.png">
+								<img src="img/avatar-2.png" alt="avatar">
 							</label>
 						</li>
 						<li>
 							<label>
-								<input name="answer_1" type="radio" value="3"> 21
+								<input name="avatar" type="radio" value="img/avatar-3.png">
+								<img src="img/avatar-3.png" alt="avatar">
 							</label>
 						</li>
 						<li>
 							<label>
-								<input name="answer_1" type="radio" value="4"> 29
-							</label>
-						</li>
-					</ul>
-					<p class="message-error"></p>
-					<button class="btnAnswer">Responder</button>
-				</form>
-
-				<form>
-					<h3>Pergunta dois</h3>
-					<ul class="options-question">
-						<li>
-							<label>
-								<input name="answer_2" type="radio" value="1"> 10
-							</label>
-						</li>
-						<li>
-							<label>
-								<input name="answer_2" type="radio" value="2"> 19
-							</label>
-						</li>
-						<li>
-							<label>
-								<input name="answer_2" type="radio" value="3"> 21
-							</label>
-						</li>
-						<li>
-							<label>
-								<input name="answer_2" type="radio" value="4"> 29
+								<input name="avatar" type="radio" value="img/avatar-4.png">
+								<img src="img/avatar-4.png" alt="avatar">
 							</label>
 						</li>
 					</ul>
-					<p class="message-error"></p>
-					<button class="btnAnswer">Responder</button>
-				</form>
-
-				<form>
-					<h3>Pergunta três</h3>
-					<ul class="options-question">
-						<li>
-							<label>
-								<input name="answer_2" type="radio" value="1"> 10
-							</label>
-						</li>
-						<li>
-							<label>
-								<input name="answer_2" type="radio" value="2"> 19
-							</label>
-						</li>
-						<li>
-							<label>
-								<input name="answer_2" type="radio" value="3"> 21
-							</label>
-						</li>
-						<li>
-							<label>
-								<input name="answer_2" type="radio" value="4"> 29
-							</label>
-						</li>
-					</ul>
-					<p class="message-error"></p>
-					<button class="btnAnswer">Responder</button>
-				</form>
-
+					<p id="getAvatarError" class="message-error"></p>
+				</div>
+				<div>
+					<button id="btnStartGame">Começar o jogo!</button>
+				</div>
 			</div>
+		</div>
+
+		<div class="step" id="stepTwo">
+
+			<div class="user-bar">
+				<div class="heart-box">
+					<ul id="ulHearts" class="ul-hearts"></ul>
+				</div>
+				<div class="avatar-box">
+					<img id="userAvatar" alt="avatar">
+					<span id="userName"></span>
+				</div>
+				<div class="coin-box">
+					<span class="coin"></span>
+					<span id="userCoins" class="coin-label"></span>
+				</div>
+			</div>
+
+			<video xxxcontrols id="videoMain">
+				<source src="source/integrativa_uniplac.mp4" type="video/mp4">
+				<p>Seu navegador não suporta vídeos HTML5.</p>
+			</video>
+
+			<div class="controls">
+				<button id="btnPlay">Play</button>
+				<div class="progress-bar"><div id="progressBar"></div></div>
+			</div>
+
+			<div id="questionWrap" class="question-wrap">
+				<div class="question">
+
+					<div id="timerScreen" class="c100 p100">
+						<span>5</span>
+						<div class="slice">
+							<div class="bar"></div>
+							<div class="fill"></div>
+						</div>
+					</div>
+					
+					<form>
+						<h3>Pergunta um</h3>
+						<ul class="options-question">
+							<li>
+								<label>
+									<input name="answer_1" type="radio" value="1"> 10
+								</label>
+							</li>
+							<li>
+								<label>
+									<input name="answer_1" type="radio" value="2"> 19
+								</label>
+							</li>
+							<li>
+								<label>
+									<input name="answer_1" type="radio" value="3"> 21
+								</label>
+							</li>
+							<li>
+								<label>
+									<input name="answer_1" type="radio" value="4"> 29
+								</label>
+							</li>
+						</ul>
+						<p class="message-error"></p>
+						<button class="btnAnswer">Responder</button>
+					</form>
+
+					<form>
+						<h3>Pergunta dois</h3>
+						<ul class="options-question">
+							<li>
+								<label>
+									<input name="answer_2" type="radio" value="1"> 10
+								</label>
+							</li>
+							<li>
+								<label>
+									<input name="answer_2" type="radio" value="2"> 19
+								</label>
+							</li>
+							<li>
+								<label>
+									<input name="answer_2" type="radio" value="3"> 21
+								</label>
+							</li>
+							<li>
+								<label>
+									<input name="answer_2" type="radio" value="4"> 29
+								</label>
+							</li>
+						</ul>
+						<p class="message-error"></p>
+						<button class="btnAnswer">Responder</button>
+					</form>
+
+					<form>
+						<h3>Pergunta três</h3>
+						<ul class="options-question">
+							<li>
+								<label>
+									<input name="answer_2" type="radio" value="1"> 10
+								</label>
+							</li>
+							<li>
+								<label>
+									<input name="answer_2" type="radio" value="2"> 19
+								</label>
+							</li>
+							<li>
+								<label>
+									<input name="answer_2" type="radio" value="3"> 21
+								</label>
+							</li>
+							<li>
+								<label>
+									<input name="answer_2" type="radio" value="4"> 29
+								</label>
+							</li>
+						</ul>
+						<p class="message-error"></p>
+						<button class="btnAnswer">Responder</button>
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="step" id="stepThree">
+			<div class="lose-box">
+				<h3>Ops! Você perdeus todas as suas vidas.</h3>
+				<p>Gostaria de tentar novamente?</p>
+				<ul class="ul-actions">
+					<li>
+						<button id="playAgain">Sim</button>
+					</li>
+					<li>
+						<button id="finishGame">Não</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="step" id="stepFour">
+			ranking aqui.
 		</div>
 
 
@@ -139,6 +212,10 @@
 		
 	</div>
 
-	<script src="js/app.js"></script>
+	<script src="js/data.js"></script>
+	<!-- <script src="labyrinth/js/game.js"></script> -->
+	<script src="js/stepOne.js"></script>
+	<script src="js/stepTwo.js"></script>
+	<script src="js/stepThree.js"></script>
 </body>
 </html>

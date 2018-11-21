@@ -1,31 +1,5 @@
 (function(){
 
-	// OBJETOS
-	var objQuestions = [
-		{
-			answered: false,
-			time: 1,
-			correct: "1"
-		},
-		{
-			answered: false,
-			time: 3,
-			correct: "2"
-		},
-		{
-			answered: false,
-			time: 5,
-			correct: "3"
-		}
-	];
-
-	var objPlayer = {
-		name: "Welison Menezes",
-		avatar: "img/avatar.png",
-		lifes: 5,
-		coins: 0
-	};
-
 	// VARIAVEIS
 	var currentQuestion = 0;
 	var bonusTime = 5;
@@ -83,7 +57,7 @@
 					 *	TEMPO EXPIRADO
 					 */
 
-					currentForm.querySelector('.btnAnswer').remove();
+					currentForm.querySelector('.btnAnswer').classList.add("hide");
 					clearInterval(timerBonus);
 					wrongAnswer();
 					
@@ -103,6 +77,15 @@
 			}
 		}
 		
+	});
+
+
+	videoMain.addEventListener("ended", function(){
+		var stepTwo = document.getElementById("stepTwo"),
+		stepFour = document.getElementById("stepFour");
+
+		stepTwo.classList.remove("active");
+		stepFour.classList.add("active");
 	});
 
 
@@ -158,7 +141,7 @@
 				if(inputs === null){
 					messageError.innerHTML = "Selecione uma opção!";
 				}else{
-					this.remove();
+					this.classList.add("hide");
 					messageError.innerHTML = "";
 
 					clearInterval(timerBonus);
@@ -198,9 +181,19 @@
 			objPlayer.lifes--;
 			setHeartsToPlayer();
 
-			setTimeout(function(){
-				hideQuestion();
-			}, 1500);
+
+			if(objPlayer.lifes < 1){
+				resetEnvoirement();
+
+				document.getElementById("stepTwo").classList.remove("active");
+				document.getElementById("stepThree").classList.add("active");
+
+			}else{
+				setTimeout(function(){
+					hideQuestion();
+				}, 1500);
+			}
+			
 		};
 	}
 
@@ -239,12 +232,6 @@
 	}
 	setCoinsToPlayer();
 
-	function setAvatarNamePlayer(){
-		userAvatar.src = objPlayer.avatar;
-		userName.innerHTML = objPlayer.name;
-	}
-	setAvatarNamePlayer();
-
 
 	function setTimerScreen(){
 		var showTime = (100 / 5) * bonusTime;
@@ -273,6 +260,47 @@
 	function updateProgressBar(){
 		percVideo =  Math.round( Math.round((100 * Math.round(currentTime))) / Math.round(videoMain.duration) );
 		progressBar.style.width = percVideo+"%";
+	}
+
+
+	function resetEnvoirement(){
+		// pausa vídeo e reseta temporizador
+		videoMain.pause();
+		videoMain.currentTime = 0;
+
+		// remove classes de controle
+		questionWrap.classList.remove("active");
+		currentForm.classList.remove("current");
+		videoMain.classList.remove("disabled");
+
+		// reseta para a primeira questão
+		currentQuestion = 0;
+		
+		clearTimeout(timerQuestion);
+		resetTimerScreen();
+
+		bonusTime = 5;
+
+		// reseta perguntas respondidas e formulários
+		for(var i = 0; i < objQuestions.length; i++){
+			objQuestions[i].answered = false;
+			forms[i].classList.remove("error");
+			forms[i].classList.remove("success");
+			if(forms[i].querySelector("input[type=radio]:checked")){
+				forms[i].querySelector("input[type=radio]:checked").checked = false;	
+			}
+			if(forms[i].querySelector('.btnAnswer')){
+				forms[i].querySelector('.btnAnswer').classList.remove("hide");
+			}
+			
+		}
+
+		currentForm.querySelector('.btnAnswer').classList.remove("hide");
+
+		objPlayer.lifes = 1;
+		objPlayer.coins = 0;
+		setHeartsToPlayer();
+		setCoinsToPlayer();
 	}
 
 
