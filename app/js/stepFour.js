@@ -4,7 +4,7 @@ function makeReport(){
 	var tr = document.createElement("TR");
 
 	objPlayers.sort(compare);
-	var index = objPlayers.findIndex(x => x.name==objPlayer.name);
+	var index = objPlayers.findIndex(x => x.id==objPlayer.id);
 
 	var trBody = "<td><img src='"+objPlayer.avatar+"' /></td>";
 		trBody += "<td>"+objPlayer.name+"</td>";
@@ -23,12 +23,17 @@ function makeReport(){
 function makeRanking(){
 
 	var ulRanking = document.getElementById("ulRanking");
+	var index = objPlayers.findIndex(x => x.id==objPlayer.id);
 
 	var total = objPlayers.length,
 		i, li, liBody;
 
 	for(i = 0; i < total; i++){
 		li = document.createElement("LI");
+
+		if(i == index){
+			li.classList.add("isYou");
+		}
 
 		liBody = "<span class='position'>"+(i+1)+"</span>";
 		liBody += "<img src='"+objPlayers[i].avatar+"'>";

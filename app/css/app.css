@@ -11,6 +11,9 @@ body{
 	height: 100%;
 	color: #3c3c3c;
 }
+body.full-screen {
+  background-size: cover !important;
+}
 
 video{
 	width: 800px;
@@ -322,6 +325,9 @@ input[type=text]{
 	padding: 15px 0;
 	border-bottom: 1px solid #aaa;
 }
+.ul-ranking li.isYou{
+	background: #ffeeba;
+}
 .ul-ranking li > span,
 .ul-ranking li > img{
 	display: inline-block;
@@ -365,4 +371,17 @@ input[type=text]{
 
 #timerScreen{
 	margin: 10px 0 0 10px;
+}
+
+#openFullscreen{
+	width: 25px;
+	height: 25px;
+	background: url(../img/expand.png) no-repeat;
+	background-size: contain;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	z-index: 99;
+	min-width: auto;
+	outline: none;
 }

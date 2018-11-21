@@ -23,6 +23,7 @@ var objQuestions = [
 
 var objPlayers = [
 	{
+		id: 1,
 		name: "Maria",
 		avatar: "img/avatar-2.png",
 		lifes: 2,
@@ -32,6 +33,7 @@ var objPlayers = [
 		timeouts: 1
 	},
 	{
+		id: 2,
 		name: "Ricardo",
 		avatar: "img/avatar-1.png",
 		lifes: 1,
@@ -41,6 +43,7 @@ var objPlayers = [
 		timeouts: 0
 	},
 	{
+		id: 3,
 		name: "Alano",
 		avatar: "img/avatar-8.png",
 		lifes: 3,
@@ -50,6 +53,7 @@ var objPlayers = [
 		timeouts: 0
 	},
 	{
+		id: 4,
 		name: "Rafael",
 		avatar: "img/avatar-6.png",
 		lifes: 2,
@@ -59,6 +63,7 @@ var objPlayers = [
 		timeouts: 0
 	},
 	{
+		id: 5,
 		name: "Joana",
 		avatar: "img/avatar-3.png",
 		lifes: 2,
@@ -68,6 +73,7 @@ var objPlayers = [
 		timeouts: 1
 	},
 	{
+		id: 6,
 		name: "Giovani",
 		avatar: "img/avatar-4.png",
 		lifes: 2,
@@ -77,6 +83,7 @@ var objPlayers = [
 		timeouts: 1
 	},
 	{
+		id: 7,
 		name: "Welison",
 		avatar: "img/avatar-9.png",
 		lifes: 1,
@@ -99,6 +106,7 @@ function compare(a,b) {
 
 
 var objPlayer = {
+	id: 8,
 	name: "",
 	avatar: "",
 	lifes: 3,
@@ -107,3 +115,63 @@ var objPlayer = {
 	hits: 0,
 	timeouts: 0
 };
+
+
+
+
+
+
+
+
+var elem = document.documentElement;
+
+function openFullscreen() {
+	if (elem.requestFullscreen) {
+		elem.requestFullscreen();
+	} else if (elem.mozRequestFullScreen) { /* Firefox */
+		elem.mozRequestFullScreen();
+	} else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+		elem.webkitRequestFullscreen();
+	} else if (elem.msRequestFullscreen) { /* IE/Edge */
+		elem.msRequestFullscreen();
+	}
+
+	document.getElementsByTagName("BODY")[0].classList.add("full-screen");
+}
+
+function closeFullscreen() {
+	if (document.exitFullscreen) {
+		document.exitFullscreen();
+	} else if (document.mozCancelFullScreen) { /* Firefox */
+		document.mozCancelFullScreen();
+	} else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+		document.webkitExitFullscreen();
+	} else if (document.msExitFullscreen) { /* IE/Edge */
+		document.msExitFullscreen();
+	}
+
+	document.getElementsByTagName("BODY")[0].classList.remove("full-screen");
+}
+
+
+function isFullscreen() {
+    if (document.fullscreenElement) {
+        return true;
+    }
+    else if (document.webkitFullscreenElement) {
+        return true;
+    }
+    else if (document.mozFullScreenElement) {
+        return true;
+    }
+    else return false;
+}
+
+document.getElementById("openFullscreen").addEventListener("click", function(){
+	if(isFullscreen()){
+		closeFullscreen();
+	}
+	else{
+		openFullscreen();
+	}
+});

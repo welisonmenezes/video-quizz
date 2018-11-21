@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
-	<title>Vídeo Quizz</title>
+	<title>Vídeo Quiz</title>
 
 	<link rel="stylesheet" href="css/circle.css">
 	<link rel="stylesheet" href="css/app.css">
@@ -10,9 +10,11 @@
 <body>
 	<div class="wrap">
 
+		<button id="openFullscreen"></button>
+
 		<div class="step active" id="stepOne">
 			<div class="config-painel">
-				<h3>Bem vindo ao Vídeo Quizz</h3>
+				<h3>Bem vindo ao Vídeo Quiz</h3>
 				<div class="name-box">
 					<p>Informe seu nome:</p>
 					<input type="text" id="getName">
@@ -224,7 +226,7 @@
 		<div class="step" id="stepFour">
 			<div class="ranking-box">
 				<h3>Obrigado por participar.</h3>
-				<h4>Abaixo segue seu relatório</h4>
+				<h4>Abaixo segue seu resultado</h4>
 				<table>
 					<thead>
 						<tr>

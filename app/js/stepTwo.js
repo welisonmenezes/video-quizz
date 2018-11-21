@@ -182,7 +182,13 @@
 
 	function wrongAnswer(isTimeout){
 		currentForm.classList.add("error");
-		audioEffects.src = "source/fail.mp3";
+
+		if(isTimeout){
+			audioEffects.src = "source/timeout.mp3";
+		}else{
+			audioEffects.src = "source/fail.mp3";
+		}
+		
 		audioEffects.oncanplay = function(){
 			audioEffects.play();
 
