@@ -47,6 +47,9 @@ td, th{
 	border: solid 1px #333;
 	background: #fff;
 }
+table img{
+	max-width: 80px;
+}
 
 
 .wrap{
@@ -85,6 +88,7 @@ td, th{
 .question-wrap form{
 	display: none;
 	min-height: 60px;
+	padding-left: 90px;
 }
 .question-wrap form.current{
 	display: block;
@@ -96,10 +100,14 @@ td, th{
 	background: green;
 }
 
+.options-question{
+	padding-top: 15px;
+}
 .options-question li{
-	display: inline-block;
-	vertical-align: middle;
+	display: block;
 	margin-right: 15px;
+	font-size: 14px;
+	margin-bottom: 10px;
 }
 
 .message-error{

@@ -15,6 +15,9 @@
 	finishGame.addEventListener("click", function(){
 		stepThree.classList.remove("active");
 		stepFour.classList.add("active");
+
+		makeReport();
+		makeRanking();
 	});
 
 }());

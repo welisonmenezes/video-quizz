@@ -19,11 +19,15 @@
 
 		if(validateConfigurations()){
 
-			objPlayer.name = getName.value;
-			objPlayer.avatar = selected.value;
-			setAvatarNamePlayer();
+			audioEffects.src = "source/lets-go.mp3";
+			audioEffects.oncanplay = function(){
+				audioEffects.play();
+				objPlayer.name = getName.value;
+				objPlayer.avatar = selected.value;
+				setAvatarNamePlayer();
 
-			objPlayers.push(objPlayer);
+				objPlayers.push(objPlayer);
+			};
 
 		}
 	});
@@ -49,6 +53,7 @@
 
 			return false;
 		}else{
+
 			getNameError.innerHTML = "";
 			getAvatarError.innerHTML = "";
 

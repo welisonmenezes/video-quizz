@@ -10,7 +10,7 @@
 <body>
 	<div class="wrap">
 
-		<div class="step xactive" id="stepOne">
+		<div class="step active" id="stepOne">
 			<div class="config-painel">
 				<h3>Bem vindo ao Vídeo Quizz</h3>
 				<div class="name-box">
@@ -70,8 +70,8 @@
 				</div>
 			</div>
 
-			<video xxxcontrols id="videoMain">
-				<source src="source/integrativa_uniplac.mp4" type="video/mp4">
+			<video controls id="videoMain">
+				<source src="source/treinamento.mp4" type="video/mp4">
 				<p>Seu navegador não suporta vídeos HTML5.</p>
 			</video>
 
@@ -84,7 +84,7 @@
 				<div class="question">
 
 					<div id="timerScreen" class="c100 p100">
-						<span>5</span>
+						<span>10</span>
 						<div class="slice">
 							<div class="bar"></div>
 							<div class="fill"></div>
@@ -92,26 +92,26 @@
 					</div>
 					
 					<form>
-						<h3>Pergunta um</h3>
+						<h3>Qual o objetivo do treinamento corporativo?</h3>
 						<ul class="options-question">
 							<li>
 								<label>
-									<input name="answer_1" type="radio" value="1"> 10
+									<input name="answer_1" type="radio" value="1"> Melhorar o RG da empresa
 								</label>
 							</li>
 							<li>
 								<label>
-									<input name="answer_1" type="radio" value="2"> 19
+									<input name="answer_1" type="radio" value="2"> Desenvolver as competências do trabalhador
 								</label>
 							</li>
 							<li>
 								<label>
-									<input name="answer_1" type="radio" value="3"> 21
+									<input name="answer_1" type="radio" value="3"> Melhorar condicionamento físico
 								</label>
 							</li>
 							<li>
 								<label>
-									<input name="answer_1" type="radio" value="4"> 29
+									<input name="answer_1" type="radio" value="4"> Nenhuma das anteriores
 								</label>
 							</li>
 						</ul>
@@ -120,26 +120,26 @@
 					</form>
 
 					<form>
-						<h3>Pergunta dois</h3>
+						<h3>Qual competência pode ser desenvolvida pelo treinamento corporativo?</h3>
 						<ul class="options-question">
 							<li>
 								<label>
-									<input name="answer_2" type="radio" value="1"> 10
+									<input name="answer_2" type="radio" value="1"> Trabalho em equipe
 								</label>
 							</li>
 							<li>
 								<label>
-									<input name="answer_2" type="radio" value="2"> 19
+									<input name="answer_2" type="radio" value="2"> Concentração
 								</label>
 							</li>
 							<li>
 								<label>
-									<input name="answer_2" type="radio" value="3"> 21
+									<input name="answer_2" type="radio" value="3"> Memorização
 								</label>
 							</li>
 							<li>
 								<label>
-									<input name="answer_2" type="radio" value="4"> 29
+									<input name="answer_2" type="radio" value="4"> Nenhuma das anteriores
 								</label>
 							</li>
 						</ul>
@@ -148,26 +148,16 @@
 					</form>
 
 					<form>
-						<h3>Pergunta três</h3>
+						<h3>Atividades físicas pode ser usadas no treinamento corporativo?</h3>
 						<ul class="options-question">
 							<li>
 								<label>
-									<input name="answer_2" type="radio" value="1"> 10
+									<input name="answer_2" type="radio" value="1"> Sim
 								</label>
 							</li>
 							<li>
 								<label>
-									<input name="answer_2" type="radio" value="2"> 19
-								</label>
-							</li>
-							<li>
-								<label>
-									<input name="answer_2" type="radio" value="3"> 21
-								</label>
-							</li>
-							<li>
-								<label>
-									<input name="answer_2" type="radio" value="4"> 29
+									<input name="answer_2" type="radio" value="2"> Não
 								</label>
 							</li>
 						</ul>
@@ -195,7 +185,7 @@
 			</div>
 		</div>
 
-		<div class="step active" id="stepFour">
+		<div class="step" id="stepFour">
 			<div class="ranking-box">
 				<h3>Obrigado por participar.</h3>
 				<h4>Abaixo segue seu relatório</h4>
@@ -228,9 +218,9 @@
 	</div>
 
 	<script src="js/data.js"></script>
+	<script src="js/stepFour.js"></script>
 	<script src="js/stepOne.js"></script>
 	<script src="js/stepTwo.js"></script>
 	<script src="js/stepThree.js"></script>
-	<script src="js/stepFour.js"></script>
 </body>
 </html>

@@ -2,18 +2,18 @@
 var objQuestions = [
 	{
 		answered: false,
-		time: 1,
-		correct: "1"
-	},
-	{
-		answered: false,
-		time: 3,
+		time: 18,
 		correct: "2"
 	},
 	{
 		answered: false,
-		time: 5,
-		correct: "3"
+		time: 29,
+		correct: "1"
+	},
+	{
+		answered: false,
+		time: 47,
+		correct: "1"
 	}
 ];
 
@@ -74,7 +74,6 @@ function compare(a,b) {
 		return 1;
 	return 0;
 }
-//objPlayers.sort(compare);
 
 
 

@@ -2,7 +2,7 @@
 
 	// VARIAVEIS
 	var currentQuestion = 0;
-	var bonusTime = 5;
+	var bonusTime = 10;
 	var timerQuestion, timerBonus, currentObj, currentForm, currentTime, percVideo;
 
 	// ELEMENTS
@@ -26,8 +26,6 @@
 		}else{
 			videoMain.pause();
 		}
-
-		//console.log(objPlayer)
 	});
 
 
@@ -64,7 +62,7 @@
 					wrongAnswer(true);
 					objPlayer.timeouts++;
 					
-				}, 5001);
+				}, 10001);
 
 				timerBonus = setInterval(function(){
 					if(bonusTime >= 1){
@@ -89,6 +87,9 @@
 
 		stepTwo.classList.remove("active");
 		stepFour.classList.add("active");
+
+		makeReport();
+		makeRanking();
 	});
 
 
@@ -124,7 +125,7 @@
 
 			resetTimerScreen();
 
-			bonusTime = 5;
+			bonusTime = 10;
 
 		};
 		
@@ -191,10 +192,18 @@
 
 
 			if(objPlayer.lifes < 1){
-				resetEnvoirement();
 
-				document.getElementById("stepTwo").classList.remove("active");
-				document.getElementById("stepThree").classList.add("active");
+				setTimeout(function(){
+					audioEffects.src = "source/die.mp3";
+					audioEffects.oncanplay = function(){
+						audioEffects.play();
+
+						resetEnvoirement();
+
+						document.getElementById("stepTwo").classList.remove("active");
+						document.getElementById("stepThree").classList.add("active");
+					};
+				}, 1500);
 
 			}else{
 				setTimeout(function(){
@@ -243,26 +252,36 @@
 
 
 	function setTimerScreen(){
-		var showTime = (100 / 5) * bonusTime;
+		var showTime = (100 / 10) * bonusTime;
 		var classTime = "p" + showTime.toFixed(0);
 
 		timerScreen.querySelector('span').innerHTML = bonusTime;
 
 		timerScreen.classList.remove("p100");
+		timerScreen.classList.remove("p90");
 		timerScreen.classList.remove("p80");
+		timerScreen.classList.remove("p70");
 		timerScreen.classList.remove("p60");
+		timerScreen.classList.remove("p50");
 		timerScreen.classList.remove("p40");
+		timerScreen.classList.remove("p30");
 		timerScreen.classList.remove("p20");
+		timerScreen.classList.remove("p10");
 		timerScreen.classList.add(classTime);
 	}
 
 	function resetTimerScreen(){
-		timerScreen.querySelector('span').innerHTML = 5;
+		timerScreen.querySelector('span').innerHTML = 10;
 		timerScreen.classList.add("p100");
+		timerScreen.classList.remove("p90");
 		timerScreen.classList.remove("p80");
+		timerScreen.classList.remove("p70");
 		timerScreen.classList.remove("p60");
+		timerScreen.classList.remove("p50");
 		timerScreen.classList.remove("p40");
+		timerScreen.classList.remove("p30");
 		timerScreen.classList.remove("p20");
+		timerScreen.classList.remove("p10");
 		timerScreen.classList.remove("p0");
 	}
 
@@ -288,7 +307,7 @@
 		clearTimeout(timerQuestion);
 		resetTimerScreen();
 
-		bonusTime = 5;
+		bonusTime = 10;
 
 		// reseta perguntas respondidas e formulários
 		for(var i = 0; i < objQuestions.length; i++){
