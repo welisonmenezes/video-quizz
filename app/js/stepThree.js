@@ -14,6 +14,8 @@
 			
 			stepThree.classList.remove("active");
 			stepTwo.classList.add("active");
+
+			resetPlayer();
 		};
 	});
 

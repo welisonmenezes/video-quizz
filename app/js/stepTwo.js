@@ -241,27 +241,6 @@
 		};
 	}
 
-	function setHeartsToPlayer(){
-		var lifes = objPlayer.lifes, i;
-
-		intoUl = "";
-		if(lifes > 0){
-			for(i = 0; i < lifes; i++){
-				intoUl += "<li></li>";
-			}
-			ulHearts.innerHTML = intoUl;
-		}
-	}
-	setHeartsToPlayer();
-
-	function setCoinsToPlayer(){
-		var coins = objPlayer.coins;
-
-		userCoins.innerHTML = coins;
-	}
-	setCoinsToPlayer();
-
-
 	function setTimerScreen(){
 		var showTime = (100 / 10) * bonusTime;
 		var classTime = "p" + showTime.toFixed(0);
@@ -335,14 +314,6 @@
 		}
 
 		currentForm.querySelector('.btnAnswer').classList.remove("hide");
-
-		objPlayer.lifes = 3;
-		objPlayer.coins = 0;
-		objPlayer.hits = 0;
-		objPlayer.errors = 0;
-		objPlayer.timeouts = 0;
-		setHeartsToPlayer();
-		setCoinsToPlayer();
 	}
 
 
