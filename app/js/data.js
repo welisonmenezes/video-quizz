@@ -291,3 +291,24 @@ var yesNot = document.getElementsByClassName("label-answer");
 for(var yn of yesNot){
 	yn.addEventListener("click", answerYesOrNot);
 }
+
+
+
+
+
+
+
+/*
+ *	selecion com botão radio
+ */
+function submitOnCheckRadio(){
+	var form = document.getElementById("formRadios");
+	var radios = form.querySelectorAll("input[type=radio]");
+
+	for(var radio of radios){
+		radio.addEventListener("change", function(){
+			form.querySelector(".btnAnswer").click();
+		});
+	}
+}
+submitOnCheckRadio();
