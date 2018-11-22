@@ -119,7 +119,7 @@
 			</div>
 
 			<div id="questionWrap" class="question-wrap">
-				<div class="question">
+				<div class="question" style="width: 80%;">
 
 					<div id="timerScreen" class="c100 p100">
 						<span>10</span>
@@ -129,32 +129,40 @@
 						</div>
 					</div>
 					
-					<form>
+					<form id="formDrag">
 						<h3>Qual o objetivo do treinamento corporativo?</h3>
-						<ul class="options-question">
-							<li>
-								<label>
-									<input name="answer_1" type="radio" value="1"> Melhorar o RG da empresa
-								</label>
-							</li>
-							<li>
-								<label>
-									<input name="answer_1" type="radio" value="2"> Desenvolver as competências do trabalhador
-								</label>
-							</li>
-							<li>
-								<label>
-									<input name="answer_1" type="radio" value="3"> Melhorar condicionamento físico
-								</label>
-							</li>
-							<li>
-								<label>
-									<input name="answer_1" type="radio" value="4"> Nenhuma das anteriores
-								</label>
-							</li>
-						</ul>
+
+						<div>
+							<br>
+							<h4>Arraste a resposta certa para a caixa azul.</h4>
+							<br>
+							<div class="droptarget answer">
+							  	<div draggable="true" class="dragtarget" id="dragtarget1" data_value="1">Melhorar o RG da empresa</div>
+							</div>
+							<div class="droptarget answer">
+							  	<div draggable="true" class="dragtarget" id="dragtarget2" data_value="2">Desenvolver as competências do trabalhador</div>
+							</div>
+							<div class="droptarget answer">
+							  	<div draggable="true" class="dragtarget" id="dragtarget3" data_value="3">Melhorar condicionamento físico</div>
+							</div>
+							<div class="droptarget answer">
+							  	<div draggable="true" class="dragtarget" id="dragtarget3" data_value="4">Nenhuma das anteriores</div>
+							</div>
+
+							<div class="droptarget alvo"></div>
+							<br>
+						</div>
+						
+						<div class="options-question" style="display: none;">
+							<input name="answer_1" type="radio" value="1">
+							<input name="answer_1" type="radio" value="2">
+							<input name="answer_1" type="radio" value="3">
+							<input name="answer_1" type="radio" value="4">
+							<button class="btnAnswer btn-dark">Responder</button>
+						</div>
+
 						<p class="message-error"></p>
-						<button class="btnAnswer btn-dark">Responder</button>
+						
 					</form>
 
 					<form>
@@ -185,22 +193,28 @@
 						<button class="btnAnswer btn-dark">Responder</button>
 					</form>
 
-					<form>
+					<form id="formYesNot">
 						<h3>Atividades físicas pode ser usadas no treinamento corporativo?</h3>
-						<ul class="options-question">
-							<li>
-								<label>
-									<input name="answer_2" type="radio" value="1"> Sim
-								</label>
-							</li>
-							<li>
-								<label>
-									<input name="answer_2" type="radio" value="2"> Não
-								</label>
-							</li>
-						</ul>
+
+						<div>
+							<br>
+							<h4>Clique no resposta correta.</h4>
+							<br>
+							<div class="label-answer-wrap">
+								<div class="label-answer" data_value="1">SIM</div>
+								<div class="label-answer not" data_value="2">NÃO</div>
+							</div>
+							<div id="fakeField" class="fake-field"></div>
+						</div>
+
+						<div class="options-question" style="display: none;">
+							<input name="answer_2" type="radio" value="1">
+							<input name="answer_2" type="radio" value="2">
+							<button class="btnAnswer btn-dark">Responder</button>
+						</div>
+
 						<p class="message-error"></p>
-						<button class="btnAnswer btn-dark">Responder</button>
+						
 					</form>
 
 				</div>
@@ -260,5 +274,6 @@
 	<script src="js/stepOne.js"></script>
 	<script src="js/stepTwo.js"></script>
 	<script src="js/stepThree.js"></script>
+
 </body>
 </html>

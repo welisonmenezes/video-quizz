@@ -1,4 +1,6 @@
-// OBJETOS
+/*
+ *	fake database
+ */
 var objQuestions = [
 	{
 		answered: false,
@@ -19,7 +21,6 @@ var objQuestions = [
 		correct: "1"
 	}
 ];
-
 
 var objPlayers = [
 	{
@@ -94,7 +95,7 @@ var objPlayers = [
 	}
 ];
 
-
+// metodo de ordenação
 function compare(a,b) {
 	if (a.coins > b.coins)
 		return -1;
@@ -103,8 +104,7 @@ function compare(a,b) {
 	return 0;
 }
 
-
-
+// o player
 var objPlayer = {
 	id: 8,
 	name: "",
@@ -123,6 +123,10 @@ var objPlayer = {
 
 
 
+
+/*
+ * 	lógica do fullscreen
+ */
 var elem = document.documentElement;
 
 function openFullscreen() {
@@ -178,6 +182,10 @@ document.getElementById("openFullscreen").addEventListener("click", function(){
 
 
 
+
+/*
+ * resets do player
+ */
 function setHeartsToPlayer(){
 	var lifes = objPlayer.lifes, i;
 
@@ -206,4 +214,80 @@ function resetPlayer(){
 	objPlayer.timeouts = 0;
 	setHeartsToPlayer();
 	setCoinsToPlayer();
+}
+
+
+
+
+
+
+/*
+ *	arrastar e soltar
+ */
+var elemento;
+var targets = document.getElementsByClassName("droptarget");
+
+function dragStart(event) {
+    elemento = event.target;
+}
+
+function dragover(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+	if(event.target.classList.contains('alvo')){
+		
+
+		var val = elemento.getAttribute("data_value");
+		var form = document.getElementById("formDrag");
+		var input = form.querySelector("input[value='"+val+"']");
+		var btn = form.querySelector('.btnAnswer');
+
+		if(input){
+			var cln = elemento.cloneNode(true);
+			event.target.appendChild(cln);
+			input.checked = true;
+			btn.click();
+		}
+	}
+}
+
+for(var target of targets){
+	target.addEventListener("dragstart", dragStart);
+	target.addEventListener("drop", drop);
+	target.addEventListener("dragover", dragover);
+}
+
+
+
+
+
+
+
+/*
+ *	selecione sim ou não
+ */
+function answerYesOrNot(){
+
+	var val = this.getAttribute("data_value");
+	var form = document.getElementById("formYesNot");
+	var input = form.querySelector("input[value='"+val+"']");
+	var btn = form.querySelector('.btnAnswer');
+
+	if(input){
+		var cln = this.cloneNode(true);
+		var target = document.getElementById("fakeField");
+		target.appendChild(cln);
+		input.checked = true;
+		btn.click();
+	}
+	
+}
+
+
+var yesNot = document.getElementsByClassName("label-answer");
+for(var yn of yesNot){
+	yn.addEventListener("click", answerYesOrNot);
 }

@@ -213,6 +213,8 @@
 
 						document.getElementById("stepTwo").classList.remove("active");
 						document.getElementById("stepThree").classList.add("active");
+						document.querySelector(".droptarget.alvo").innerHTML = "";
+						document.getElementById("fakeField").innerHTML = "";
 					};
 				}, 1500);
 
